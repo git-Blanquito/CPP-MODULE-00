@@ -11,7 +11,6 @@
 /* **************************************************************************** */
 
 #include <iostream>
-using namespace std;
 
 int	main(int argc, char **argv)
 {
@@ -21,7 +20,7 @@ int	main(int argc, char **argv)
 	i = 1;
 	j = 0;
 	if (argc < 2)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	else
 	{
 		while (i < argc)
@@ -31,7 +30,7 @@ int	main(int argc, char **argv)
 			i++;
 			j = 0;
 		}
-		std::cout << endl;
+		std::cout << std::endl;
 	}
 	return (0);
 }
