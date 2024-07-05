@@ -10,7 +10,7 @@
 /*                                                                              */
 /* **************************************************************************** */
 
-#include "lib.hpp"
+#include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook(void)
 {
@@ -25,10 +25,10 @@ int		PhoneBook::get_total_contact(void)
 
 void	PhoneBook::add_contact(void)
 {
-	string	answer;
-	long	tel_number;
-	int		contact_id;
-	int		i;
+	std::string	answer;
+	long		tel_number;
+	int			contact_id;
+	int			i;
 
 	answer = "";
 	tel_number = 0;
@@ -45,32 +45,32 @@ void	PhoneBook::add_contact(void)
 		this->_total_contacts++;
 	while (answer == "")
 	{
-		cout << "Please, enter a contact first name" << endl;
-		cin >> answer;
+		std::cout << "Please, enter a contact first name" << std::endl;
+		std::cin >> answer;
 		if (answer != "")
-			this->_contacs[contact_id].set_fname(answer);
+			this->_contacts[contact_id].set_fname(answer);
 	}
 	answer = "";
 	while (answer == "")
 	{
-		cout << "Please, enter a contact last name" << endl;
-		cin >> answer;
+		std::cout << "Please, enter a contact last name" << std::endl;
+		std::cin >> answer;
 		if (answer != "")
-			this->_contacs[contact_id].set_lname(answer);
+			this->_contacts[contact_id].set_lname(answer);
 	}
 	answer = "";
 	while (answer == "")
 	{
-		cout << "Please, enter a contact nickname" << endl;
-		cin >> answer;
+		std::cout << "Please, enter a contact nickname" << std::endl;
+		std::cin >> answer;
 		if (answer != "")
-			this->_contacs[contact_id].set_nick(answer);
+			this->_contacts[contact_id].set_nick(answer);
 	}
 	answer = "";
 	while (answer == "")
 	{
-		cout << "Please, enter a Telephone Number" << endl;
-		cin >> answer;
+		std::cout << "Please, enter a Telephone Number" << std::endl;
+		std::cin >> answer;
 		if (answer != "")
 		{
 			while (answer[i] != '\0' && (answer[i] >= 48 && answer[i] <= 57))
@@ -78,10 +78,10 @@ void	PhoneBook::add_contact(void)
 			if (i != 0 && i < 19)
 			{
 				tel_number = stol(answer);
-				this->_contacs[contact_id].set_phone_num(tel_number);
+				this->_contacts[contact_id].set_phone_num(tel_number);
 			} else
 			{
-				cout << "ERROR, wrong format. Only numbers are accepted." << endl;
+				std::cout << "ERROR, wrong format. Only numbers are accepted." << std::endl;
 				answer = "";
 			}
 		}
@@ -89,17 +89,17 @@ void	PhoneBook::add_contact(void)
 	answer = "";
 	while (answer == "")
 	{
-		cout << "Please, enter your secret" << endl;
-		cin >> answer;
+		std::cout << "Please, enter your secret" << std::endl;
+		std::cin >> answer;
 		if (answer != "")
-			this->_contacs[contact_id].set_secret(answer);
+			this->_contacts[contact_id].set_secret(answer);
 	}
 }
 
-string	PhoneBook::max_ten_char(string str)
+std::string	PhoneBook::max_ten_char(std::string str)
 {
 	int 	i;
-	string	tenchar;
+	std::string	tenchar;
 
 	i = 0;
 	tenchar = "";
@@ -128,37 +128,37 @@ void	PhoneBook::display_contacts(void)
 
 	i = 0;
 	j = this->_total_contacts;
-	cout << endl
-		<< "_____________________________________________" << endl
-		<< "|     Index|First Name| Last Name|  Nickname|" << endl
-		<< "|----------|----------|----------|----------|" << endl;
+	std::cout << std::endl
+		<< "_____________________________________________" << std::endl
+		<< "|     Index|First Name| Last Name|  Nickname|" << std::endl
+		<< "|----------|----------|----------|----------|" << std::endl;
 	while (j != 0)
 	{
-		cout 
+		std::cout 
 			<< "|         " << i
-			<< "|" << max_ten_char(this->_contacs[i].get_fname()) 
-			<< "|" << max_ten_char(this->_contacs[i].get_lname()) 
-			<< "|" << max_ten_char(this->_contacs[i].get_nick()) 
-			<< "|" << endl;
+			<< "|" << max_ten_char(this->_contacts[i].get_fname()) 
+			<< "|" << max_ten_char(this->_contacts[i].get_lname()) 
+			<< "|" << max_ten_char(this->_contacts[i].get_nick()) 
+			<< "|" << std::endl;
 		i++;
 		j--;
 	}
-	cout << "---------------------------------------------" << endl;
-	cout << endl;
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << std::endl;
 }
 
 void	PhoneBook::select_one(void)
 {
 	int	i;
 	int j;
-	string id;
+	std::string id;
 
 	i = 0;
 	j = this->_total_contacts;
 	while(j != 0)
 	{
-		cout << "Enter the index of the contact to be displayed" << endl;
-		cin >> id;
+		std::cout << "Enter the index of the contact to be displayed" << std::endl;
+		std::cin >> id;
 		i = 0;
 		while (id[i] != '\0' && (id[i] >= 48 && id[i] <= 57))
 			i++;
@@ -167,19 +167,19 @@ void	PhoneBook::select_one(void)
 			i = stoi(id);
 			if (i >= 0 && i < j)
 			{
-				cout << endl
-				<< "Index: " << i << endl
-				<< "First name: " << this->_contacs[i].get_fname() << endl
-				<< "Last name: " << this->_contacs[i].get_lname() << endl
-				<< "Nickname: " << this->_contacs[i].get_nick() << endl
-				<< "Telephone number: " << this->_contacs[i].get_phone_num() << endl
-				<< "Darkest secret: " << this->_contacs[i].get_secret() << endl 
-				<< endl;
+				std::cout << std::endl
+				<< "Index: " << i << std::endl
+				<< "First name: " << this->_contacts[i].get_fname() << std::endl
+				<< "Last name: " << this->_contacts[i].get_lname() << std::endl
+				<< "Nickname: " << this->_contacts[i].get_nick() << std::endl
+				<< "Telephone number: " << this->_contacts[i].get_phone_num() << std::endl
+				<< "Darkest secret: " << this->_contacts[i].get_secret() << std::endl 
+				<< std::endl;
 				break;
 			} else
-				cout << "ERROR, the number is not in the list." << endl;
+				std::cout << "ERROR, the number is not in the list." << std::endl;
 		} else
-			cout << "ERROR, wrong format. Only numbers are accepted. MAX 1 digit." << endl;
+			std::cout << "ERROR, wrong format. Only numbers are accepted. MAX 1 digit." << std::endl;
 	}
 }
 

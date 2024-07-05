@@ -10,11 +10,12 @@
 /*                                                                              */
 /* **************************************************************************** */
 
-#pragma once
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# include "lib.hpp"
+# include <string>
+# include "Contact.hpp"
+# include <iostream>
 
 class	PhoneBook
 {
@@ -26,7 +27,7 @@ class	PhoneBook
 	private:
 		int			_index;
 		int			_total_contacts;
-		Contact		_contacs[8];
+		Contact		_contacts[8];
 		std::string	max_ten_char(std::string str);
 		void		display_contacts(void);
 		void		select_one(void);

@@ -10,24 +10,24 @@
 /*                                                                              */
 /* **************************************************************************** */
 
-# include "lib.hpp"
+# include "Contact.hpp"
 
 Contact::Contact(void)
 {
 	this->_fname = "";
 }
 
-string	Contact::get_fname(void) const
+std::string	Contact::get_fname(void) const
 {
 	return (this->_fname);
 }
 
-string	Contact::get_lname(void) const
+std::string	Contact::get_lname(void) const
 {
 	return (this->_lname);
 }
 
-string	Contact::get_nick(void) const
+std::string	Contact::get_nick(void) const
 {
 	return (this->_nick);
 }
@@ -37,22 +37,22 @@ long	Contact::get_phone_num(void) const
 	return (this->_phone_num);
 }
 
-string	Contact::get_secret(void) const
+std::string	Contact::get_secret(void) const
 {
 	return (this->_secret);
 }
 
-void	Contact::set_fname(string str)
+void	Contact::set_fname(std::string str)
 {
 	this->_fname = str;
 }
 
-void	Contact::set_lname(string lst_name)
+void	Contact::set_lname(std::string lst_name)
 {
 	this->_lname = lst_name;
 }
 
-void	Contact::set_nick(string nck_name)
+void	Contact::set_nick(std::string nck_name)
 {
 	this->_nick = nck_name;
 }
@@ -62,7 +62,7 @@ void	Contact::set_phone_num(long phn_nmber)
 	this->_phone_num = phn_nmber;
 }
 
-void	Contact::set_secret(string secret)
+void	Contact::set_secret(std::string secret)
 {
 	this->_secret = secret;
 }

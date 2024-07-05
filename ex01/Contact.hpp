@@ -10,11 +10,10 @@
 /*                                                                              */
 /* **************************************************************************** */
 
-#pragma once
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-# include "lib.hpp"
+# include <string>
 
 class	Contact
 {

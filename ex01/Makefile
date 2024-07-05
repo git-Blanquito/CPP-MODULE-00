@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = PhoneBook
-library.h = lib.hpp
+library.h = PhoneBook.hpp Contact.hpp
 CFLAGS = -Wall -Wextra -Werror
 FILES = PhoneBook.cpp Contact.cpp main.cpp
 COMPILED_FILES = PhoneBook.o Contact.o main.o

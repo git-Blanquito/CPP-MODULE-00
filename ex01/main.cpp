@@ -10,16 +10,17 @@
 /*                                                                              */
 /* **************************************************************************** */
 
-#include "lib.hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 int	main(void)
 {
 	PhoneBook 	ph1;
-	string		action;
+	std::string		action;
 
-	cout << "Welcome to the best PhoneBook ever" << endl;
-	cout << "Please, select as action: ADD, SEARCH or EXIT" << endl;
-	cin >> action;
+	std::cout << "Welcome to the best PhoneBook ever" << std::endl;
+	std::cout << "Please, select as action: ADD, SEARCH or EXIT" << std::endl;
+	std::cin >> action;
 	while (action != "EXIT")
 	{
 		if (action == "ADD")
@@ -27,9 +28,9 @@ int	main(void)
 		else if (action == "SEARCH")
 			ph1.search_contact();
 		else
-			cout << "ERROR. The chosen action is wrong." << endl;
-		cout << "Please, choose an action again: ADD, SEARCH or EXIT" << endl;
-		cin >> action;
+			std::cout << "ERROR. The chosen action is wrong." << std::endl;
+		std::cout << "Please, choose an action again: ADD, SEARCH or EXIT" << std::endl;
+		std::cin >> action;
 	}
 	return (0);
 }
